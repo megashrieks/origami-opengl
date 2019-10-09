@@ -88,9 +88,11 @@ void displayOrigami(){
     square s1 = {{s[0].bl.x,s[0].bl.y,1},{s[0].br.x,s[0].br.y,1},s[0].bl,s[0].br};
     square s2 = {s[2].tr,{s[2].tr.x,s[2].tr.y,1},s[2].br,{s[2].br.x,s[2].br.y,1}};
     square s3 = {{s[0].tl.x,s[0].tl.y,1},s[0].tl,{s[0].bl.x,s[0].bl.y,1},s[0].bl};
-    square s4 = {s[2].bl,s[2].br,{s[2].bl.x,s[2].bl.y,1},{s[2].br.x,s[2].br.y,1}};
+    square s4 = {{s[2].tl.x,s[2].tl.y,1},{s[2].tr.x,s[2].tr.y,1},s[2].tl,s[2].tr};
+    square s5 = {{s[0].tl.x,s[0].tl.y,1},{s[0].tr.x,s[0].tr.y,1},s[0].tl,s[0].tr};
+    square s6 = {{s[0].tr.x,s[0].tr.y,1},{s[0].br.x,s[0].br.y,1},s[0].tr,s[0].br};
 
-    transition_step tts0,tts1,tts2,tts3;
+    transition_step tts0,tts1,tts2,tts3,tts4;
     tts0.steps = 1;
     tts0.index_array[0] = 1;
     tts0.squares[0] = s1;
@@ -107,12 +109,21 @@ void displayOrigami(){
     tts3.index_array[0] = 3;
     tts3.squares[0] = s4;
 
+    tts4.steps = 3;
+    tts4.index_array[0] = 2;
+    tts4.index_array[1] = 3;
+    tts4.index_array[2] = 5;
+    tts4.squares[0] = s5;
+    tts4.squares[1] = s5;
+    tts4.squares[2] = s6;
 
-    t.total_transitions = 3;
+
+    t.total_transitions = 5  ;
     t.ts[0] = tts0;
     t.ts[1] = tts1;
     t.ts[2] = tts2;
-    //t.ts[3] = tts3;
+    t.ts[3] = tts3;
+    t.ts[4] = tts4;
 
 
 
@@ -137,8 +148,7 @@ void displayOrigami(){
 
 
         //current transitions for linear interpolation
-        transition_step current = t.ts[min(wh.state - 1,2)];
-
+        transition_step current = t.ts[min(wh.state - 1,t.total_transitions-1)];
         if(step_pointer < current.steps && current.index_array[step_pointer] == i){
             draw_square(
                 lerp_square(wh.global_interpolation, s[i],current.squares[step_pointer])
@@ -152,13 +162,14 @@ void displayOrigami(){
     //TODO : use glutTimerFunc to replace the static interpolation parameter with ID based one
     if(wh.global_interpolation <= 1){
         wh.global_interpolation += 0.0001;
+        glutPostRedisplay();
     }
 
-    glMatrixMode(GL_MODELVIEW);     // To operate on model-view matrix
-    glLoadIdentity();
+    //glMatrixMode(GL_MODELVIEW);     // To operate on model-view matrix
+    //glLoadIdentity();
     //gluLookAt ( 0.0, 0.0, 10.0, 0,0,0.0, 0.0, 1.0, 0.0 );
     //glRotatef(-.1,1,0,0);
-    glutPostRedisplay();
+    //glutPostRedisplay();
 }
 
 

@@ -41,7 +41,7 @@
 	"types.h"
 	"splash.h"
 
-1570546804 source:/media/shrikanth/New Volume/project/origami-opengl/main.c
+1570623834 source:/media/shrikanth/New Volume/project/origami-opengl/main.c
 	<stdio.h>
 	<GL/glut.h>
 	"types.h"
