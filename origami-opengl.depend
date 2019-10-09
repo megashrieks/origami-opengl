@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1569675579 source:/media/shrikanth/New Volume/project/origami-opengl/main.cpp
+	"types.h"
+	"splash.h"
+	<stdio.h>
+	<GL/glut.h>
+
+1066736514 /home/shrikanth/custom/freeglut-3.2.0/include/GL/glut.h
+	"freeglut_std.h"
+
+1453319319 /home/shrikanth/custom/freeglut-3.2.0/include/GL/freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1569673218 /media/shrikanth/New Volume/project/origami-opengl/splash_screen.h
+	"types.h"
+
+1569674183 source:/media/shrikanth/New Volume/project/origami-opengl/splash_screen.c
+	<GL/glut.h>
+	"types.h"
+	"splash_screen.h"
+
+1570529117 /media/shrikanth/New Volume/project/origami-opengl/types.h
+
+1569845238 /media/shrikanth/New Volume/project/origami-opengl/splash.h
+
+1569845233 source:/media/shrikanth/New Volume/project/origami-opengl/splash.c
+	"splash.h"
+	"types.h"
+	<GL/glut.h>
+
+1569675113 /media/shrikanth/New Volume/project/origami-opengl/splash.c
+	<GL/glut.h>
+	"types.h"
+	"splash.h"
+
+1570546804 source:/media/shrikanth/New Volume/project/origami-opengl/main.c
+	<stdio.h>
+	<GL/glut.h>
+	"types.h"
+	"splash.h"
+	"utils.h"
+	"statemanager.h"
+
+1570531148 /media/shrikanth/New Volume/project/origami-opengl/utils.h
+	"types.h"
+
+1570527125 source:/media/shrikanth/New Volume/project/origami-opengl/statemanager.c
+	"statemanager.h"
+	"types.h"
+	<GL/glut.h>
+
+1569845814 /media/shrikanth/New Volume/project/origami-opengl/statemanager.h
+
+1570531110 source:/media/shrikanth/New Volume/project/origami-opengl/utils.c
+	"utils.h"
+	"types.h"
+	<GL/glut.h>
+
