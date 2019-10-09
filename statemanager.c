@@ -2,6 +2,8 @@
 #include"types.h"
 #include<GL/glut.h>
 extern window wh;
+void displayText();
+void displayOrigami();
 void stateChange(unsigned char key, int x, int y){
     if(key == ' ') wh.state += 1;
     wh.global_interpolation = 0;

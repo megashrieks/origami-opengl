@@ -1,4 +1,5 @@
 #include "types.h"
+#include <GL/glut.h>
 
 #ifndef UTILS_H_INCLUDED
 #define UTILS_H_INCLUDED
